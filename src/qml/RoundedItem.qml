@@ -1,7 +1,7 @@
 /*
- * Copyright (C) 2021 LingmoOS Team.
+ * Copyright (C) 2024 LingmoOS Team.
  *
- * Author:     revenmartin <revenmartin@gmail.com>
+ * Author:     Lingmo OS Team. <team@lingmo.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,20 +26,5 @@ Rectangle {
     width: win.width/1.8
     height: win.height/1.8
     color: LingmoUI.Theme.secondBackgroundColor
-    //         // border.width: 2
     radius: LingmoUI.Theme.bigRadius
-    
-
-    //         Image {
-    //             id: logo
-    //             width: 300
-    //             // anchors.centerIn: parent
-    //             anchors.centerIn: parent
-    //             // anchors.fill: parent
-    //             anchors.top: parent.top
-    //             // anchors.topMargin: 10
-    //             anchors.horizontalCenter: parent.horizontalCenter
-    //             sourceSize: Qt.size(width, height)
-    //             source: "qrc:/assets/logo.svg"
-    //         }
 }

@@ -40,14 +40,6 @@ Item {
 
         RoundedItem {
             id: cr
-            // Text {
-            //     id: txt
-            //     anchors.top: parent.top
-            //     anchors.topMargin: im.height/5
-            //     anchors.horizontalCenter: parent.horizontalCenter
-            //     text: qsTr("Welcome to ") + info.version
-            //     font.pointSize: 13
-            // }
 
             RowLayout {
                 anchors.centerIn: parent

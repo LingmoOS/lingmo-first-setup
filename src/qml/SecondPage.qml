@@ -62,10 +62,6 @@ Item {
                 anchors.leftMargin: wallpaper_logo.width/8
                 anchors.top: parent.top
                 anchors.topMargin: 30
-                // anchors.right: parent.right
-                // anchors.rightMargin: im.width/12
-                // anchors.horizontalCenter: parent.horizontalCenter
-                // anchors.verticalCenter: parent.verticalCenter
                 text: qsTr("Personalize your computer")
                 font.pointSize: 20
                 font.bold: true
@@ -78,7 +74,6 @@ Item {
                 anchors.top: title.bottom
                 anchors.topMargin: 5
                 anchors.leftMargin: wallpaper_logo.width/8
-                // anchors.verticalCenter: hello.verticalCenter
                 text: qsTr("You can choose your desktop wallpaper and switch between light and dark colors.")
                 wrapMode: txt.WordWrap
                 color: LingmoUI.Theme.textColor
@@ -91,7 +86,6 @@ Item {
                 anchors.top: txt.bottom
                 anchors.topMargin: 25
                 anchors.leftMargin: wallpaper_logo.width/8
-                // anchors.verticalCenter: hello.verticalCenter
                 text: qsTr("Wallpaper View")
                 wrapMode: txt.WordWrap
                 color: LingmoUI.Theme.textColor
@@ -155,20 +149,6 @@ Item {
                     }
                 }
 
-                // Rectangle {
-                //     id: statusbarItem
-                //     anchors.horizontalCenter: parent.horizontalCenter
-                //     anchors.top: _image.top
-                //     anchors.topMargin: 3
-                //     width: _image.width
-                //     height: 5
-                //     color: LingmoUI.Theme.backgroundColor
-                //     // opacity: 0.85
-                //     // border.width: 0.1
-                //     // border.color: LingmoUI.Theme.textColor
-                //     // radius: LingmoUI.Theme.bigRadius/3
-                // }
-
                 Rectangle {
                     id: dockItem
                     anchors.horizontalCenter: parent.horizontalCenter
@@ -185,7 +165,6 @@ Item {
 
                 Rectangle {
                     id: icon1
-                    // anchors.horizontalCenter: dockItem.horizontalCenter
                     anchors.verticalCenter: dockItem.verticalCenter
                     anchors.left: dockItem.left
                     anchors.leftMargin: 2
@@ -406,9 +385,6 @@ Item {
                 id: defd
                 anchors.top: deviceItem.bottom
                 anchors.topMargin: 5
-                // anchors.leftMargin: wallpaper_logo.width/8
-                // anchors.verticalCenter: deviceItem.verticalCenter
-                // anchors.verticalCenter: hello.verticalCenter
                 anchors.horizontalCenter: deviceItem.horizontalCenter
                 text: qsTr("Device")
                 wrapMode: txt.WordWrap
@@ -416,72 +392,6 @@ Item {
                 font.pointSize: 10
                 font.bold: true
             }
-
-            // Rectangle {
-            //     anchors.left: wallpaper_logo.right
-            //     anchors.leftMargin: wallpaper_logo.width/8
-            //     anchors.top: wpa.bottom
-            //     anchors.topMargin: 10
-            
-            //     Image {
-            //         id: _image
-            //         // anchors.fill: parent
-            //         width: 210
-            //         // anchors.left: wallpaper_logo.right
-            //         // anchors.leftMargin: wallpaper_logo.width/8
-            //         // anchors.top: wpa.bottom
-            //         // anchors.topMargin: 10
-            //         // anchors.margins: LingmoUI.Units.smallSpacing
-            //         // anchors.verticalCenter: parent.verticalCenter
-                    
-            //         // source: "file://" + modelData
-            //         source: "qrc:/assets/wallpaper/MundoLight.jpeg"
-            //         sourceSize: Qt.size(width, height)
-            //         fillMode: Image.PreserveAspectCrop
-            //         asynchronous: true
-            //         mipmap: true
-            //         cache: true
-            //         smooth: true
-            //         opacity: 1.0
-
-            //         Behavior on opacity {
-            //             NumberAnimation {
-            //                 duration: 100
-            //                 easing.type: Easing.InOutCubic
-            //             }
-            //         }
-
-            //         layer.enabled: true
-            //         layer.effect: OpacityMask {
-            //             maskSource: Item {
-            //                 width: _image.width
-            //                 height: _image.height
-            //                 Rectangle {
-            //                     anchors.fill: parent
-            //                     radius: LingmoUI.Theme.bigRadius
-            //                 }
-            //             }
-            //         }
-            //     }
-            //     MouseArea {
-            //         anchors.fill: parent
-            //         acceptedButtons: Qt.LeftButton
-            //         hoverEnabled: true
-
-            //         onClicked: {
-            //             background.setBackground(modelData)
-            //         }
-
-            //         onEntered: function() {
-            //             _image.opacity = 0.7
-            //         }
-            //         onExited: function() {
-            //             _image.opacity = 1.0
-            //         }
-
-            //         onPressedChanged: item.scale = pressed ? 0.97 : 1.0
-            //     }
-            // }
 
             Text {
                 id: themes

@@ -1,3 +1,22 @@
+/*
+ * Copyright (C) 2024 LingmoOS Team.
+ *
+ * Author:     LingmoOS Team <team@lingmo.org>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 import QtQuick 2.12
 import QtQuick.Window 2.12
 import QtQuick.Controls 2.12
@@ -70,51 +89,4 @@ Window {
 
         SecondPage {}
     }
-
-    // Component {
-    //     id: updatingPage
-
-    //     UpdatingPage {}
-    // }
-
-    // Component {
-    //     id: finishedPage
-
-    //     FinishedPage {}
-    // }
-
-    // ItemPage {
-    //     id: control
-    //     // title: qsTr("Welcome to Lingmo OS Hydrogen")
-    //     anchors.centerIn: parent
-        
-    //     Rectangle {
-    //         anchors.centerIn: parent
-    //         width: win.width/2
-    //         height: win.height/2 
-    //         color: LingmoUI.Theme.backgroundColor
-    //         // border.width: 2
-    //         radius: LingmoUI.Theme.bigRadius
-
-    //         Image {
-    //             id: logo
-    //             width: 300
-    //             // anchors.centerIn: parent
-    //             anchors.centerIn: parent
-    //             // anchors.fill: parent
-    //             anchors.top: parent.top
-    //             // anchors.topMargin: 10
-    //             anchors.horizontalCenter: parent.horizontalCenter
-    //             sourceSize: Qt.size(width, height)
-    //             source: "qrc:/assets/logo.svg"
-    //         }
-            
-    //         Button {
-    //             anchors.centerIn: parent
-    //             text: qsTr("Exit")
-    //             onClicked: Qt.quit()
-    //         }
-    //     }
-    // }
-    
 }

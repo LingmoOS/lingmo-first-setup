@@ -36,14 +36,6 @@ Item {
 
         RoundedItem {
             id: im
-            // Text {
-            //     id: txt
-            //     anchors.top: parent.top
-            //     anchors.topMargin: im.height/5
-            //     anchors.horizontalCenter: parent.horizontalCenter
-            //     text: qsTr("Welcome to ") + info.version
-            //     font.pointSize: 13
-            // }
 
             Image {
                 id: logo
@@ -51,13 +43,6 @@ Item {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
                 anchors.leftMargin: im.width/20
-                // anchors.centerIn: parent
-                // anchors.centerIn: parent
-                // anchors.centerIn: parent
-                // anchors.fill: parent
-                // anchors.top: txt.top
-                // anchors.topMargin: im.height/5
-                // anchors.horizontalCenter: parent.horizontalCenter
                 sourceSize: Qt.size(width, height)
                 source: "qrc:/assets/welcome.svg"
             }
@@ -68,10 +53,6 @@ Item {
                 anchors.leftMargin: logo.width/6
                 anchors.top: parent.top
                 anchors.topMargin: parent.height/2.5
-                // anchors.right: parent.right
-                // anchors.rightMargin: im.width/12
-                // anchors.horizontalCenter: parent.horizontalCenter
-                // anchors.verticalCenter: parent.verticalCenter
                 text: qsTr("Hello!")
                 font.pointSize: 25
                 font.bold: true

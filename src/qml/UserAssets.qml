@@ -37,14 +37,6 @@ Item {
 
         RoundedItem {
             id: user
-            // Text {
-            //     id: txt
-            //     anchors.top: parent.top
-            //     anchors.topMargin: im.height/5
-            //     anchors.horizontalCenter: parent.horizontalCenter
-            //     text: qsTr("Welcome to ") + info.version
-            //     font.pointSize: 13
-            // }
 
             function clear() {
                 userNameField.clear()
@@ -59,13 +51,6 @@ Item {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
                 anchors.leftMargin: user.width/20
-                // anchors.centerIn: parent
-                // anchors.centerIn: parent
-                // anchors.centerIn: parent
-                // anchors.fill: parent
-                // anchors.top: txt.top
-                // anchors.topMargin: im.height/5
-                // anchors.horizontalCenter: parent.horizontalCenter
                 sourceSize: Qt.size(width, height)
                 source: "qrc:/assets/user_set.svg"
             }
@@ -76,10 +61,6 @@ Item {
                 anchors.leftMargin: userImag.width/8
                 anchors.top: parent.top
                 anchors.topMargin: 30
-                // anchors.right: parent.right
-                // anchors.rightMargin: im.width/12
-                // anchors.horizontalCenter: parent.horizontalCenter
-                // anchors.verticalCenter: parent.verticalCenter
                 text: qsTr("Create your own account")
                 font.pointSize: 20
                 font.bold: true
@@ -92,7 +73,6 @@ Item {
                 anchors.top: hello.bottom
                 anchors.topMargin: 5
                 anchors.leftMargin: userImag.width/8
-                // anchors.verticalCenter: hello.verticalCenter
                 text: qsTr("We will create a new account on this computer for your daily use, in addition to the root account. \nPlease make sure to fill in the relevant information.")
                 wrapMode: txt.WordWrap
                 color: LingmoUI.Theme.textColor
