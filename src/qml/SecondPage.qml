@@ -99,25 +99,34 @@ Item {
                 font.bold: true
             }
 
+            // DesktopView {
+            //     anchors.left: wallpaper_logo.right
+            //     anchors.leftMargin: wallpaper_logo.width/8
+            //     anchors.top: wpa.bottom
+            //     anchors.topMargin: 10
+            //     width: 210
+            //     // height: 300
+            // }
             Rectangle {
+                id: deviceItem
                 anchors.left: wallpaper_logo.right
+                anchors.top: txt.bottom
+                anchors.topMargin: 25
                 anchors.leftMargin: wallpaper_logo.width/8
-                anchors.top: wpa.bottom
-                anchors.topMargin: 10
-            
+                width: win.width/8
+                height: win.height/8
+                color: LingmoUI.Theme.backgroundColor
+                border.width: 4
+                border.color: LingmoUI.Theme.textColor
+                radius: LingmoUI.Theme.bigRadius
+
                 Image {
                     id: _image
-                    // anchors.fill: parent
-                    width: 210
-                    // anchors.left: wallpaper_logo.right
-                    // anchors.leftMargin: wallpaper_logo.width/8
-                    // anchors.top: wpa.bottom
-                    // anchors.topMargin: 10
-                    // anchors.margins: LingmoUI.Units.smallSpacing
-                    // anchors.verticalCenter: parent.verticalCenter
-                    
-                    // source: "file://" + modelData
-                    source: "qrc:/assets/wallpaper/MundoLight.jpeg"
+                    width: (win.width/8)-6
+                    height: (win.height/8)-6
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    source: LingmoUI.Theme.darkMode ? "qrc:/assets/wallpaper/MundoDark.jpeg" : "qrc:/assets/wallpaper/MundoLight.jpeg"
                     sourceSize: Qt.size(width, height)
                     fillMode: Image.PreserveAspectCrop
                     asynchronous: true
@@ -145,25 +154,73 @@ Item {
                         }
                     }
                 }
-                MouseArea {
-                    anchors.fill: parent
-                    acceptedButtons: Qt.LeftButton
-                    hoverEnabled: true
-
-                    onClicked: {
-                        background.setBackground(modelData)
-                    }
-
-                    onEntered: function() {
-                        _image.opacity = 0.7
-                    }
-                    onExited: function() {
-                        _image.opacity = 1.0
-                    }
-
-                    onPressedChanged: item.scale = pressed ? 0.97 : 1.0
-                }
             }
+
+            // Rectangle {
+            //     anchors.left: wallpaper_logo.right
+            //     anchors.leftMargin: wallpaper_logo.width/8
+            //     anchors.top: wpa.bottom
+            //     anchors.topMargin: 10
+            
+            //     Image {
+            //         id: _image
+            //         // anchors.fill: parent
+            //         width: 210
+            //         // anchors.left: wallpaper_logo.right
+            //         // anchors.leftMargin: wallpaper_logo.width/8
+            //         // anchors.top: wpa.bottom
+            //         // anchors.topMargin: 10
+            //         // anchors.margins: LingmoUI.Units.smallSpacing
+            //         // anchors.verticalCenter: parent.verticalCenter
+                    
+            //         // source: "file://" + modelData
+            //         source: "qrc:/assets/wallpaper/MundoLight.jpeg"
+            //         sourceSize: Qt.size(width, height)
+            //         fillMode: Image.PreserveAspectCrop
+            //         asynchronous: true
+            //         mipmap: true
+            //         cache: true
+            //         smooth: true
+            //         opacity: 1.0
+
+            //         Behavior on opacity {
+            //             NumberAnimation {
+            //                 duration: 100
+            //                 easing.type: Easing.InOutCubic
+            //             }
+            //         }
+
+            //         layer.enabled: true
+            //         layer.effect: OpacityMask {
+            //             maskSource: Item {
+            //                 width: _image.width
+            //                 height: _image.height
+            //                 Rectangle {
+            //                     anchors.fill: parent
+            //                     radius: LingmoUI.Theme.bigRadius
+            //                 }
+            //             }
+            //         }
+            //     }
+            //     MouseArea {
+            //         anchors.fill: parent
+            //         acceptedButtons: Qt.LeftButton
+            //         hoverEnabled: true
+
+            //         onClicked: {
+            //             background.setBackground(modelData)
+            //         }
+
+            //         onEntered: function() {
+            //             _image.opacity = 0.7
+            //         }
+            //         onExited: function() {
+            //             _image.opacity = 1.0
+            //         }
+
+            //         onPressedChanged: item.scale = pressed ? 0.97 : 1.0
+            //     }
+            // }
 
             Text {
                 id: themes
