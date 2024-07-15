@@ -402,6 +402,21 @@ Item {
                 // }
             }
 
+            Text {
+                id: defd
+                anchors.top: deviceItem.bottom
+                anchors.topMargin: 5
+                // anchors.leftMargin: wallpaper_logo.width/8
+                // anchors.verticalCenter: deviceItem.verticalCenter
+                // anchors.verticalCenter: hello.verticalCenter
+                anchors.horizontalCenter: deviceItem.horizontalCenter
+                text: qsTr("Device")
+                wrapMode: txt.WordWrap
+                color: LingmoUI.Theme.textColor
+                font.pointSize: 10
+                font.bold: true
+            }
+
             // Rectangle {
             //     anchors.left: wallpaper_logo.right
             //     anchors.leftMargin: wallpaper_logo.width/8
@@ -504,6 +519,7 @@ Item {
 
             Button {
                 // anchors.centerIn: parent
+                id: exBt
                 anchors.right: parent.right
                 anchors.rightMargin: parent.width/20
                 anchors.bottom: parent.bottom
@@ -511,8 +527,21 @@ Item {
                 flat: true
                 text: qsTr("Done!")
                 onClicked: {
-                    // stack.push(secondPage)
                     Qt.quit()
+                }
+            }
+
+            Button {
+                // anchors.centerIn: parent
+                id: back
+                anchors.right: exBt.left
+                anchors.rightMargin: 5
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 35
+                flat: false
+                text: qsTr("Back")
+                onClicked: {
+                    stackView.pop()
                 }
             }
             
