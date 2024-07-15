@@ -16,5 +16,7 @@
         <file>../assets/user_set.svg</file>
         <file>../assets/wallpaper_set.svg</file>
         <file>../assets/example.svg</file>
+        <file>../assets/wallpaper/MundoDark.jpeg</file>
+        <file>../assets/wallpaper/MundoLight.jpeg</file>
     </qresource>
 </RCC>

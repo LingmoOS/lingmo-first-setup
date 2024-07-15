@@ -31,6 +31,10 @@ Item {
         id: appearance
     }
 
+    Background {
+        id: background
+    }
+
     ColumnLayout {
         id: layout
         anchors.fill: parent
@@ -88,50 +92,76 @@ Item {
                 anchors.topMargin: 25
                 anchors.leftMargin: wallpaper_logo.width/8
                 // anchors.verticalCenter: hello.verticalCenter
-                text: qsTr("Wallpaper")
+                text: qsTr("Wallpaper View")
                 wrapMode: txt.WordWrap
                 color: LingmoUI.Theme.textColor
                 font.pointSize: 15
                 font.bold: true
             }
 
-            Image {
-                id: _image
-                // anchors.fill: parent
-                width: 210
-                // anchors.margins: LingmoUI.Units.smallSpacing
-                // anchors.verticalCenter: parent.verticalCenter
+            Rectangle {
                 anchors.left: wallpaper_logo.right
                 anchors.leftMargin: wallpaper_logo.width/8
                 anchors.top: wpa.bottom
                 anchors.topMargin: 10
-                // source: "file://" + modelData
-                source: "qrc:/assets/example.svg"
-                sourceSize: Qt.size(width, height)
-                fillMode: Image.PreserveAspectCrop
-                asynchronous: true
-                mipmap: true
-                cache: true
-                smooth: true
-                opacity: 1.0
+            
+                Image {
+                    id: _image
+                    // anchors.fill: parent
+                    width: 210
+                    // anchors.left: wallpaper_logo.right
+                    // anchors.leftMargin: wallpaper_logo.width/8
+                    // anchors.top: wpa.bottom
+                    // anchors.topMargin: 10
+                    // anchors.margins: LingmoUI.Units.smallSpacing
+                    // anchors.verticalCenter: parent.verticalCenter
+                    
+                    // source: "file://" + modelData
+                    source: "qrc:/assets/wallpaper/MundoLight.jpeg"
+                    sourceSize: Qt.size(width, height)
+                    fillMode: Image.PreserveAspectCrop
+                    asynchronous: true
+                    mipmap: true
+                    cache: true
+                    smooth: true
+                    opacity: 1.0
 
-                Behavior on opacity {
-                    NumberAnimation {
-                        duration: 100
-                        easing.type: Easing.InOutCubic
-                    }
-                }
-
-                layer.enabled: true
-                layer.effect: OpacityMask {
-                    maskSource: Item {
-                        width: _image.width
-                        height: _image.height
-                        Rectangle {
-                            anchors.fill: parent
-                            radius: LingmoUI.Theme.bigRadius
+                    Behavior on opacity {
+                        NumberAnimation {
+                            duration: 100
+                            easing.type: Easing.InOutCubic
                         }
                     }
+
+                    layer.enabled: true
+                    layer.effect: OpacityMask {
+                        maskSource: Item {
+                            width: _image.width
+                            height: _image.height
+                            Rectangle {
+                                anchors.fill: parent
+                                radius: LingmoUI.Theme.bigRadius
+                            }
+                        }
+                    }
+                }
+                MouseArea {
+                    anchors.fill: parent
+                    acceptedButtons: Qt.LeftButton
+                    hoverEnabled: true
+
+                    onClicked: {
+                        background.setBackground(modelData)
+                    }
+
+                    onEntered: function() {
+                        _image.opacity = 0.7
+                    }
+                    onExited: function() {
+                        _image.opacity = 1.0
+                    }
+
+                    onPressedChanged: item.scale = pressed ? 0.97 : 1.0
                 }
             }
 
