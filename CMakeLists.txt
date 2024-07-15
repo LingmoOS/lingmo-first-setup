@@ -26,6 +26,11 @@ find_package(PkgConfig REQUIRED)
 find_package(KF5NetworkManagerQt REQUIRED)
 find_package(KF5ModemManagerQt REQUIRED)
 find_package(KF5Config)
+find_package(QApt REQUIRED)
+
+pkg_search_module(FontConfig REQUIRED fontconfig IMPORTED_TARGET)
+pkg_search_module(ICU REQUIRED icu-i18n)
+
 # Get the installation directory from qmake
 get_target_property(QT_QMAKE_EXECUTABLE ${Qt5Core_QMAKE_EXECUTABLE} IMPORTED_LOCATION)
 if(NOT QT_QMAKE_EXECUTABLE)
@@ -66,6 +71,20 @@ target_link_libraries(${PROJECT_NAME}
         Qt5::Widgets
         Qt5::DBus
         Qt5::Concurrent
+        Qt5::Xml
+        Qt5::X11Extras
+        KF5::NetworkManagerQt
+        KF5::ModemManagerQt
+        KF5::ConfigCore
+        PkgConfig::FontConfig
+        ${FREETYPE_LIBRARIES}
+        ${ICU_LDFLAGS}
+        Libcrypt::Libcrypt
+
+        ${X11_LIBRARIES}
+        X11::X11
+        X11::Xi
+        X11::Xcursor
 )
 
 file(GLOB TS_FILES translations/*.ts)
