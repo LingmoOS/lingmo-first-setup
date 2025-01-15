@@ -72,11 +72,11 @@ Window {
         HomePage { }
     }
 
-    Component {
-        id: userAssets
+    // Component {
+    //     id: userAssets
 
-        UserAssets {}
-    }
+    //     UserAssets {}
+    // }
 
     Component {
         id: firstPage
@@ -88,5 +88,11 @@ Window {
         id: secondPage
 
         SecondPage {}
+    }
+
+    Component {
+        id: donePage
+
+        DonePage {}
     }
 }

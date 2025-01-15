@@ -53,7 +53,7 @@ Item {
                 anchors.leftMargin: logo.width/6
                 anchors.top: parent.top
                 anchors.topMargin: parent.height/2.5
-                text: qsTr("Hello!")
+                text: qsTr("Done")
                 font.pointSize: 25
                 font.bold: true
                 color: LingmoUI.Theme.textColor
@@ -66,21 +66,36 @@ Item {
                 anchors.topMargin: 5
                 anchors.leftMargin: logo.width/6
                 anchors.verticalCenter: hello.verticalCenter
-                text: qsTr("Welcome to ") + info.version
+                text: qsTr("Enjoy Lingmo OS!")
                 color: LingmoUI.Theme.textColor
                 font.pointSize: 15
             }
 
             Button {
+                // anchors.centerIn: parent
+                id: exBt
                 anchors.right: parent.right
                 anchors.rightMargin: parent.width/20
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 35
                 flat: true
-                text: qsTr("Start")
-                font.pointSize: 13
+                text: qsTr("Done!")
                 onClicked: {
-                    stackView.push(secondPage)
+                    Qt.quit()
+                }
+            }
+
+            Button {
+                // anchors.centerIn: parent
+                id: back
+                anchors.right: exBt.left
+                anchors.rightMargin: 5
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 35
+                flat: false
+                text: qsTr("Back")
+                onClicked: {
+                    stackView.pop()
                 }
             }
         }

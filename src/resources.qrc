@@ -8,6 +8,7 @@
         <file>qml/FirstPage.qml</file>
         <file>qml/IconCheckBox.qml</file>
         <file>qml/SecondPage.qml</file>
+        <file>qml/DonePage.qml</file>
         <file>qml/UserAssets.qml</file>
         <file>qml/DesktopView.qml</file>
         <file>../assets/logo.svg</file>

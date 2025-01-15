@@ -16,17 +16,11 @@ endif()
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake;${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-set(QT COMPONENTS Core Gui Quick QuickControls2 LinguistTools Widgets DBus Xml Concurrent X11Extras)
+set(QT COMPONENTS Core Gui Quick QuickControls2 Widgets DBus Concurrent X11Extras)
 find_package(Qt5 REQUIRED ${QT})
-find_package(Libcrypt REQUIRED)
 find_package(X11 REQUIRED)
 find_package(Freetype REQUIRED)
 find_package(PkgConfig REQUIRED)
-
-find_package(KF5NetworkManagerQt REQUIRED)
-find_package(KF5ModemManagerQt REQUIRED)
-find_package(KF5Config)
-find_package(QApt REQUIRED)
 
 pkg_search_module(FontConfig REQUIRED fontconfig IMPORTED_TARGET)
 pkg_search_module(ICU REQUIRED icu-i18n)
@@ -71,20 +65,10 @@ target_link_libraries(${PROJECT_NAME}
         Qt5::Widgets
         Qt5::DBus
         Qt5::Concurrent
-        Qt5::Xml
         Qt5::X11Extras
-        KF5::NetworkManagerQt
-        KF5::ModemManagerQt
-        KF5::ConfigCore
         PkgConfig::FontConfig
         ${FREETYPE_LIBRARIES}
         ${ICU_LDFLAGS}
-        Libcrypt::Libcrypt
-
-        ${X11_LIBRARIES}
-        X11::X11
-        X11::Xi
-        X11::Xcursor
 )
 
 file(GLOB TS_FILES translations/*.ts)

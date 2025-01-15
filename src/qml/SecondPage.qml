@@ -435,9 +435,9 @@ Item {
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 35
                 flat: true
-                text: qsTr("Done!")
+                text: qsTr("Next")
                 onClicked: {
-                    Qt.quit()
+                    stackView.push(donePage)
                 }
             }
 
