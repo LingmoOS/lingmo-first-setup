@@ -1,7 +1,7 @@
 /*
- * Copyright (C) 2024 LingmoOS Team.
+ * Copyright (C) 2025 LingmoOS Team.
  *
- * Author:     LingmoOS Team <team@lingmo.org>
+ * Author:     Lingmo OS Team <team@lingmo.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,27 +16,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-#ifndef FIRSTSETUPUI_H
-#define FIRSTSETUPUI_H
-
-#include <QObject>
+#include "setup.h"
 #include <QSettings>
+#include <QProcess>
 
-class FirstSetupUI : public QObject
+FirstSetupUI::FirstSetupUI(QObject *parent)
+    : QObject(parent)
 {
-    Q_OBJECT
+}
 
-public:
-    static FirstSetupUI *self();
-    explicit FirstSetupUI(QObject *parent = nullptr);
-
-    Q_INVOKABLE void configInstall();
-    
-    // QHash<int, QByteArray> roleNames() const override;
-
-    // int rowCount(const QModelIndex &parent = QModelIndex()) const override;
-    // QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
-};
-
-#endif // FIRSTSETUPUI_H
+void FirstSetupUI::configInstall()
+{
+    QProcess::startDetached("config-installer", QStringList());
+}

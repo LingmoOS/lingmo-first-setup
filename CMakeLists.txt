@@ -46,6 +46,7 @@ set(SRCS
     src/version.cpp
     src/appearance.cpp
     src/background.cpp
+    src/setup.cpp
 )
 
 set(RESOURCES

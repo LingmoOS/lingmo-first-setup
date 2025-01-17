@@ -26,6 +26,10 @@ import Lingmo.Setup 1.0
 Item {
     id: control
 
+    FirstSetupUI {
+        id: setup
+    }
+
     ColumnLayout {
         id: layout
         anchors.fill: parent
@@ -81,6 +85,7 @@ Item {
                 flat: true
                 text: qsTr("Done!")
                 onClicked: {
+                    setup.configInstall()
                     Qt.quit()
                 }
             }

@@ -29,6 +29,7 @@
 #include "version.h"
 #include "appearance.h"
 #include "background.h"
+#include "setup.h"
 
 int main(int argc, char *argv[])
 {
@@ -45,6 +46,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<SysVersion>(uri, 1, 0, "SysVersion");
     qmlRegisterType<Appearance>(uri, 1, 0, "Appearance");
     qmlRegisterType<Background>(uri, 1, 0, "Background");
+    qmlRegisterType<FirstSetupUI>(uri, 1, 0, "FirstSetupUI");
 
     // Translations
     QLocale locale;
