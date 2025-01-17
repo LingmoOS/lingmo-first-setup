@@ -83,7 +83,7 @@ Item {
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 35
                 flat: true
-                text: qsTr("Done!")
+                text: qsTr("Enter the system")
                 onClicked: {
                     setup.configInstall()
                     Qt.quit()
