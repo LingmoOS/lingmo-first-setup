@@ -1,3 +1,10 @@
+lingmo-welcome (1.0.5) helium; urgency=medium
+
+  [Lingmo OS Team]
+  * Fixed
+
+ -- Lingmo OS Team <lingmo@lingmo.org>  Sat, 18 Jan 2025 13:30:00 +0800
+
 lingmo-welcome (1.0.0) helium; urgency=medium
 
   [Lingmo OS Team]

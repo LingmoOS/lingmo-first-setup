@@ -25,6 +25,8 @@
 #include <QTranslator>
 #include <QFile>
 #include <QIcon>
+#include <QCommandLineParser>
+#include <QCommandLineOption>
 
 #include "version.h"
 #include "appearance.h"
@@ -40,6 +42,20 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
+
+    QCommandLineParser parser;
+    parser.setApplicationDescription("Lingmo OS First Setup");
+    parser.addHelpOption();
+    parser.addVersionOption();
+
+    QCommandLineOption noStartExec("d", "Exit");
+    parser.addOption(noStartExec);
+
+    parser.process(app);
+
+    if (parser.isSet(noStartExec)) {
+        return 0;
+    }
 
     const char *uri = "Lingmo.Setup";
     
