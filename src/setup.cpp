@@ -19,6 +19,11 @@
 #include "setup.h"
 #include <QSettings>
 #include <QProcess>
+#include <QFile>
+#include <QFileInfoList>
+#include <QFileInfo>
+#include <QDir>
+#include <QDebug>
 
 FirstSetupUI::FirstSetupUI(QObject *parent)
     : QObject(parent)
@@ -27,5 +32,11 @@ FirstSetupUI::FirstSetupUI(QObject *parent)
 
 void FirstSetupUI::configInstall()
 {
-    QProcess::startDetached("config-installer", QStringList());
+    QString filePath = QDir::homePath() + "/.islin_install_lock";
+    bool result = QFile::remove(filePath);
+    if (result) {
+        qDebug() << "文件删除成功：" << filePath;
+    } else {
+        qDebug() << "文件删除失败：" << filePath;
+    }
 }

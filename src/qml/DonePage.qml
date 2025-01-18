@@ -85,7 +85,7 @@ Item {
                 flat: true
                 text: qsTr("Enter the system")
                 onClicked: {
-                    // setup.configInstall()
+                    setup.configInstall()
                     Qt.quit()
                 }
             }
